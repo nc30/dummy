@@ -1,11 +1,9 @@
 from setuptools import setup
 
-requires = ['bcrypt']
-
 setup(
     name = "nc30-dummiy",
     version = '0.0.1',
-    install_requires = requires,
+    install_requires = ['bcrypt'],
     author = 'Himura Asahi',
     author_email = 'himura@nitolab.com',
     packages = ["dummies"],
