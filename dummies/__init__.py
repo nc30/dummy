@@ -2,6 +2,10 @@ import random
 import string
 import bcrypt
 
+UPPER_WORDS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+LOWER_WORDS = 'abcdefghijklmnopqrstuvwxyz'
+SYMBOL_WORDS = '!#$%&:[]@-=_-'
+
 def ip():
     return ",".join([str(random.randint(0,255)) for i in range(0,4)])
 
@@ -27,6 +31,14 @@ def email():
 
 def phone():
     return f"{random.randint(0, 999):03}-{random.randint(0, 9999):04}-{random.randint(0, 9999):04}"
+
+def password(length=12):
+    p = []
+    p.append(random.choice(UPPER_WORDS))
+    p.append(random.choice(LOWER_WORDS))
+    p.append(random.choice(SYMBOL_WORDS))
+    p += [random.choice(UPPER_WORDS+LOWER_WORDS+SYMBOL_WORDS) for z in range(length-3)]
+    return ''.join(p)
 
 def text():
     return random.choice([
