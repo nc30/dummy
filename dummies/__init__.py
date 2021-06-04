@@ -4,6 +4,7 @@ import bcrypt
 
 UPPER_WORDS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 LOWER_WORDS = 'abcdefghijklmnopqrstuvwxyz'
+NUMELIC_WORDS = '0123456789'
 SYMBOL_WORDS = '!#$%&:[]@-=_-'
 
 def ip():
@@ -37,7 +38,8 @@ def password(length=12):
     p.append(random.choice(UPPER_WORDS))
     p.append(random.choice(LOWER_WORDS))
     p.append(random.choice(SYMBOL_WORDS))
-    p += [random.choice(UPPER_WORDS+LOWER_WORDS+SYMBOL_WORDS) for z in range(length-3)]
+    p.append(random.choice(NUMELIC_WORDS))
+    p += [random.choice(UPPER_WORDS+LOWER_WORDS+SYMBOL_WORDS+NUMELIC_WORDS) for z in range(length-4)]
     return ''.join(p)
 
 def text():
