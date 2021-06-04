@@ -1,8 +1,8 @@
 from setuptools import setup
 
 setup(
-    name = "nc30-dummiy",
-    version = '0.0.1',
+    name = "nc30-dummy",
+    version = '0.0.2',
     install_requires = ['bcrypt'],
     author = 'Himura Asahi',
     author_email = 'himura@nitolab.com',
